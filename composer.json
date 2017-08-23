@@ -1,0 +1,21 @@
+{
+	"name": "milessummers/silverstripe-countryfields",
+	"description": "Country dropdown field with valid State/Region data",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "formfields"],
+	"homepage": "http://github.com/MilesSummers/silverstripe-countryfields",
+	"authors": [
+	{
+		"name": "Miles Summers",
+		"email": "miles@youngearth.com.au"		
+	}
+	],
+
+	"require":
+	{
+		"silverstripe/framework": "~3.1"
+	},
+	"extra": {
+		"installer-name": "countryfields"
+	}
+}
