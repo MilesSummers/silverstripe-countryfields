@@ -71,18 +71,18 @@ class CountryField extends DropdownField {
 	 public function Field($properties = array()) {
 		if( $region = $this->getRegionName() ) {
 			if($this->config()->jquery) Requirements::javascript(FRAMEWORK_DIR . '/thirdparty/jquery/jquery.js');
-			Requirements::javascript('countryfields/javascript/select2.full.js');
-			Requirements::css("countryfields/css/select2.min.css");
-			if($this->config()->bootstrap) Requirements::css("countryfields/css/select2-bootstrap.min.css");
+			Requirements::javascript(COUNTRY_FIELDS_DIR.'/javascript/select2.full.js');
+			Requirements::css(COUNTRY_FIELDS_DIR."/css/select2.min.css");
+			if($this->config()->bootstrap) Requirements::css(COUNTRY_FIELDS_DIR."/css/select2-bootstrap.min.css");
 
 			$vars = array(
 				"CountryField" => $this->getName(),
 				"RegionField" => $region
 			);
 
-			Requirements::javascriptTemplate("countryfields/javascript/region.jquery.js", $vars);
-			if($this->config()->bootstrap) Requirements::javascriptTemplate("countryfields/javascript/enable.select2.bootstrap.js", $vars);
-			else Requirements::javascriptTemplate("countryfields/javascript/enable.select2.js", $vars);
+			Requirements::javascriptTemplate(COUNTRY_FIELDS_DIR."/javascript/region.jquery.js", $vars);
+			if($this->config()->bootstrap) Requirements::javascriptTemplate(COUNTRY_FIELDS_DIR."/javascript/enable.select2.bootstrap.js", $vars);
+			else Requirements::javascriptTemplate(COUNTRY_FIELDS_DIR."/javascript/enable.select2.js", $vars);
 		}
 		return parent::Field($properties);
 	}
